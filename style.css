@@ -1,0 +1,642 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Serif';
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  height: 80px;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul li.logo-fixo {
+  flex: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 10px 20px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: whitesmoke;
+  transition: width .3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+#logo {
+  height: 50px;
+  width: auto;
+
+
+}
+
+
+#inicio {
+  position: relative;
+}
+
+#paginainicial {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.img1 {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#paginainicial h1,
+#paginainicial h2,
+#paginainicial button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#paginainicial h1 {
+  top: 30%;
+  font-size: 40px;
+}
+
+#paginainicial h2 {
+  top: 40%;
+  font-size: 15px;
+}
+
+#paginainicial button {
+  top: 50%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+#paginainicial button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#paginainicial button:focus {
+  outline: none;
+}
+
+#deputados {
+  text-align: center;
+  padding: 200px 0;
+  margin: 60px;
+}
+
+#deputados h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#consultaDeputado {
+  width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#mostrartodosButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #343a41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+#mostrartodosButton:hover {
+  background-color: #6080a4
+}
+
+.container {
+  max-width: 100% margin: 0 auto;
+
+}
+
+#resultadoDeputados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px;
+}
+
+.deputado-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1)
+}
+
+.deputado-foto {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+
+}
+
+.deputado-info div {
+  flex-grow: 1;
+}
+
+#partidos {
+  text-align: center;
+  padding: 200px 0;
+  margin: 60px;
+}
+
+#partidos h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#mostrarpartidosButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #343a41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+#mostrarpartidosButton:hover {
+  background-color: #6080a4
+}
+
+.partido-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ghostwhite;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 2px;
+  width: calc(25% - 40px);
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.partido-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.partido-info {
+  text-align: center;
+  color: #000000;
+}
+
+.partido-foto {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+
+#resultadoPartidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 50px;
+  gap: 20px;
+}
+
+#consultaPartido {
+  width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#noticias {
+  text-align: center;
+  padding:200px 0;
+  margin: 70px;
+}
+
+#noticias h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.noticias-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.noticia {
+  width: 48%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.noticia:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.noticia img {
+  width: 500px;
+  height: 400px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.noticia h3 {
+  font-size: 24px;
+  margin: 10px;
+  margin-top: 25px;
+}
+
+.noticia p {
+  font-size: 18px;
+  margin: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.ver-mais {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #343a41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.ver-mais:hover {
+  background-color: #6080a4
+}
+
+.containerform {
+
+  align-items: center;
+  width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controleform {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+
+}
+
+.controleform:focus {
+  outline: none;
+  border-color: #66afe9;
+}
+
+.botaoform {
+  background-color: #343a41;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.botaoform:hover {
+  background-color: #6080a4;
+}
+
+
+#contato h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+
+}
+
+#contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 0;
+  margin: 60px;
+  
+}
+
+#contato h3 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#contato p {
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 18px 0;
+  
+}
+#eventos {
+  text-align: center;
+  padding: 200px 0;
+  margin: 60px;
+}
+
+#eventos h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#consultaEvento {
+  width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+#mostrarEventosButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #343a41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#mostrarEventosButton:hover {
+  background-color: #6080a4;
+}
+
+#resultadoEventos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px;
+}
+
+.evento-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.evento-info div {
+  flex-grow: 1;
+}
+
+.botao-topo {
+
+  background-image: url('https://png.pngtree.com/png-vector/20220924/ourlarge/pngtree-arrow-up-flat-white-color-icon-send-straight-white-icon-vector-png-image_19939294.jpg');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000; 
+  margin-left: 10px;
+}
+
+footer {
+  position: relative;
+}
+
+.botao-topo:hover {
+  opacity: 0.8;
+}
+  
+/* responsividade */
+@media (max-width: 1200px) {
+  nav ul {
+    font-size: 18px;
+  }
+
+  #paginainicial h1 {
+    font-size: 35px;
+  }
+
+  #paginainicial h2 {
+    font-size: 14px;
+  }
+
+  #consultaDeputado, #consultaPartido, #consultaEvento {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #deputados, #partidos, #noticias, #eventos, #contato {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  nav ul {
+    font-size: 16px;
+  }
+
+  #paginainicial h1 {
+    font-size: 30px;
+  }
+
+  #paginainicial h2 {
+    font-size: 13px;
+  }
+
+  .noticia {
+    width: 100%;
+  }
+
+  .deputado-item, .evento-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deputado-foto, .evento-foto {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .partido-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .overlay {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #paginainicial h1 {
+    font-size: 28px;
+  }
+
+  #paginainicial h2 {
+    font-size: 12px;
+  }
+
+  .noticia {
+    width: 100%;
+  }
+
+  .partido-item {
+    width: 100%;
+  }
+
+  #deputados, #partidos, #noticias, #eventos, #contato {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  nav ul {
+    font-size: 14px;
+  }
+
+  #paginainicial h1 {
+    font-size: 24px;
+  }
+
+  #paginainicial h2 {
+    font-size: 10px;
+  }
+
+
+  #consultaDeputado, #consultaPartido, #consultaEvento {
+    width: 100%;
+  }
+
+  .partido-item {
+    width: 100%;
+  }
+
+  #deputados, #partidos, #noticias, #eventos, #contato {
+    padding: 30px 0;
+  }
+
+  .noticia {
+    width: 100%;
+  }
+
+  .containerform {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .controleform {
+    width: 100%;
+  }
+
+  .botaoform {
+    width: 100%;
+    padding: 10px;
+  }
+}

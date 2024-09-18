@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul class='lista'>
+        <li class="menu"><img id="logo" src="logo-camara.png" alt="Logo da câmara" title="Logo Câmara dos Deputados">
+        </li>
+        <li class="menu"><a href='#inicio'>Inicio</a></li>
+        <li class="menu"><a href='#deputados'>Deputados</a></li>
+        <li class="menu"><a href="#partidos">Partidos</a></li>
+        <li class="menu"><a href='#noticias'>Notícias</a></li>
+        <li class="menu"><a href="#eventos">Eventos</a></li>
+        <li class="menu"><a href="#contato">Contato</a></li>
+      </ul>
+      
+    </nav>
+
+
+    <section id='inicio'>
+      <div id="paginainicial">
+        <img class='img1' src="camdeputados.jpg" alt="Imagem da Câmara dos Deputados"
+          title="Imagem da Câmara dos Deputados">
+        <div class='overlay'>
+          <h1>Quem são os deputados</h1>
+          <h2>Conheça os deputados e seus partidos.</h2>
+          <button onclick="location.href='#deputados'">Deputados </button>
+        </div>
+      </div>
+    </section>
+
+    <section id='deputados' class="section-divider">
+      <h2>Deputados</h2>
+      <p>Consulte aqui os deputados da legislatura atual: </p>
+      <input type="text" id='consultaDeputado' name='consultaDeputado' placeholder="Escreva o nome do deputado:">
+      <button id="mostrartodosButton">Mostrar Todos</button>
+      <div id="resultadoDeputados"></div>
+
+    </section>
+
+    <section id='partidos' class="section-divider">
+      <h2>Partidos</h2>
+      <p>Consulte aqui os partidos existentes: </p>
+      <input type="text" id='consultaPartido' placeholder="Escreva a sigla do partido:">
+      <button id="mostrarpartidosButton">Mostrar Todos</button>
+      <div id="resultadoPartidos"></div>
+    </section>
+  </div>
+
+  <section id="noticias" class="section-divider">
+    <h2>Notícias</h2>
+    <div class="noticias-container">
+      <div class="noticia">
+        <h3>Comitiva da Câmara dos Deputados visita áreas queimadas no Pantanal</h3>
+        <img src="noticia1.jpg" alt="Imagem da notícia" title="Imagem da notícia">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et pariatur eaque qui. Facere assumenda id vero
+          repellendus. Ratione harum delectus eos praesentium tempore? Optio maiores iusto accusamus modi, doloremque
+          iste!</p>
+      </div>
+      <div class="noticia">
+        <h3>Câmara aprova perdão a produtores rurais do Rio Grande do Sul</h3>
+        <img src="noticia2.jpg" alt="Imagem da notícia" title="Imagem da notícia">
+        <p>O benefício vale para municípios em que o governo federal tenha reconhecido estado de calamidade ou situação de emergência... Leia mais</p>
+      </div>
+    </div>
+    <button class="ver-mais">Ver mais notícias</button>
+  </section> 
+    
+  <section id="eventos">
+    <h2>Eventos</h2>
+    <h3>Veja aqui os eventos agendados</h3>
+    <div id="resultadoEventos"></div>
+    <button id="mostrarEventosButton">Mostrar Todos</button>
+  </section>
+
+  <section id=contato>
+    <h2>Contato</h2>
+    <div class="containerform">
+      <div id="containertexto">
+        <h3> Fale Conosco</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero laudantium earum ipsum, hic asperiores fugit
+          aspernatur quasi iste dicta error, aliquam beatae eos! Quas inventore voluptatibus delectus iusto
+          necessitatibus corrupti.</p>
+      </div>
+      <form id='contatoform' action="#" method="POST">
+        <input type='text' id="nome" name="nome" class="controleform" placeholder="Nome:" required>
+        <input type='email' id="email" name="email" class="controleform" placeholder="E-mail:" required>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem:" required></textarea>
+        <button type="submit" class="botaoform">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <button id="btnTopo" class="botao-topo"></button>
+
+  <footer>
+    <p>Assessment Interface web - NS &copy;</p>
+  </footer>
+
+  
+
+  
+
+  <script src="script.js"></script>
+</body>
+
+</html>
